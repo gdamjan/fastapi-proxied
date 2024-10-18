@@ -2,7 +2,7 @@
 In this example we use a custom ProxyPrefixMiddleware
 """
 
-from fastapi import FastAPI, Request
+# from fastapi import FastAPI, Request
 import os
 
 from .proxy_middleware import ProxyPrefixMiddleware
