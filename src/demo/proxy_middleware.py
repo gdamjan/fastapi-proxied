@@ -2,11 +2,11 @@
 Usage:
     app = FastAPI(root_path=root_path)
     if root_path:
-        app.add_middleware(ProxyPrefixMiddleware)
+        app.add_middleware(StripProxyPrefixMiddleware)
 """
 
 
-class ProxyPrefixMiddleware:
+class StripProxyPrefixMiddleware:
     def __init__(self, app):
         self.app = app
 

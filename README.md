@@ -14,7 +14,7 @@ uv run pytest
 ```
 
 ```
-FASTAPI_ROOT_PATH=/api/ uv run uvicorn fastapi_proxied:app
+FASTAPI_ROOT_PATH=/api/ uv run uvicorn demo:app
 ```
 
 Expected response from all 3 variants:
@@ -29,3 +29,12 @@ $ curl -s http://127.0.0.1:8000/api/openapi.json | jq '.servers[0].url'
 ## References
 * https://fastapi.tiangolo.com/advanced/behind-a-proxy/
 * https://fastapi.tiangolo.com/advanced/sub-applications/
+
+
+## Additional tests
+
+```
+uv run uvicorn --root-path=/app/v1 --interface wsgi demo:wsgi_app
+uv run uvicorn --root-path=/app/v1 demo:asgi_app
+uv run uvicorn --root-path=/app/v1 demo:starlette
+```
