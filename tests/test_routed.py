@@ -3,7 +3,7 @@ from fastapi.testclient import TestClient
 
 def client():
     # has to be a lazy import to run after conftest.py sets up the env var
-    from fastapi_proxied.routed_app import app
+    from demo.routed_app import app
 
     return TestClient(app)
 
